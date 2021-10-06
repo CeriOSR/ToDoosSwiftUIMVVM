@@ -17,10 +17,7 @@ struct TaskListView: View {
                                         }) { task in
                                             TaskView(task: task)
             }
-            .onDelete(perform: { indexSet in
-                guard let index = indexSet.first else { return }
-                taskVM.removeTask(atIndex: index)
-            })
+            .onDelete(perform: taskVM.removeTask)
         }
         .listStyle(InsetListStyle())
     }

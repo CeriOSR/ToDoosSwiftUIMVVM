@@ -25,8 +25,8 @@ class TaskViewModel: Identifiable, ObservableObject {
         tasks.append(task)
     }
     
-    func removeTask(atIndex: Int) {
-        tasks.remove(at: atIndex)
+    func removeTask(atIndex: IndexSet) {
+        tasks.remove(atOffsets: atIndex)
     }
     
     func sort() {
